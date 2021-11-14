@@ -1,0 +1,10 @@
+#!/bin/sh
+lxsession &
+picom &
+light-locker &
+nitrogen --restore &
+nm-applet &
+volumeicon &
+cbatticon &
+dunst &
+xrdb ~/.Xresources
