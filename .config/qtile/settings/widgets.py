@@ -29,7 +29,6 @@ def powerline(fg="light", bg="dark"):
         padding=-4
     )
 
-
 def workspaces(): 
     return [
         separator(),
@@ -82,9 +81,9 @@ primary_widgets = [
 
     powerline('color3', 'color4'),
 
-    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
+    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
     
-    widget.Net(**base(bg='color3'), interface='wlp0s20f3'),
+    widget.Net(**base(bg='color3'), format='{down} ↓↑ {up}'),
 
     powerline('color2', 'color3'),
 
