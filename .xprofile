@@ -7,4 +7,5 @@ nm-applet &
 volumeicon &
 cbatticon &
 dunst &
+xrandr --auto
 xrdb ~/.Xresources
