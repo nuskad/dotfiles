@@ -26,7 +26,7 @@ def powerline(fg="light", bg="dark"):
         **base(fg, bg),
         text="", # Icon: nf-oct-triangle_left
         fontsize=55,
-        padding=-8
+        padding=5
     )
 
 def workspaces(): 
