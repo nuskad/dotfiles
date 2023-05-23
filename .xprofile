@@ -4,8 +4,8 @@ picom &
 light-locker &
 nitrogen --restore &
 nm-applet &
-volumeicon &
-cbatticon &
+#volumeicon &
+#cbatticon &
 dunst &
 udiskie -t &
 xrandr --auto
