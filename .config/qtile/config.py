@@ -4,6 +4,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile.dgroups import simple_key_binder
 from time import sleep
+import os
 
 mod = "mod4"
 terminal = "alacritty"
@@ -174,7 +175,22 @@ def power():
     qtile.cmd_spawn("sh -c ~/.config/rofi/scripts/power")
 
 def check_battery():
-    widget.
+    bats = [f for f in os.listdir("/sys/class/power_supply") if f.startswith("BAT")]
+    if not bats:
+        return widget.TextBox(
+                    text='Desktop',
+                    font='JetBrains Mono Bold',
+                    background='#353446',
+                    foreground='#CAA9E0',
+                )
+    return widget.Battery(
+                    font='JetBrains Mono Bold',
+                    background='#353446',
+                    foreground='#CAA9E0',
+                    format='{percent:2.0%}',
+                    fontsize=13,
+                )
+    
 
 screens = [
 
@@ -372,15 +388,16 @@ screens = [
                     background='#353446',
                     scale=1,
                 ),
+                check_battery(),
 
 
-                widget.Battery(
-                    font='JetBrains Mono Bold',
-                    background='#353446',
-                    foreground='#CAA9E0',
-                    format='{percent:2.0%}',
-                    fontsize=13,
-                ),
+                #widget.Battery(
+                #    font='JetBrains Mono Bold',
+                #    background='#353446',
+                #    foreground='#CAA9E0',
+                #    format='{percent:2.0%}',
+                #    fontsize=13,
+                #),
 
 
                 widget.Image(
