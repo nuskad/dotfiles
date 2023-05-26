@@ -65,12 +65,11 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Spawn a command using a prompt widget"),
     Key([mod], "p", lazy.spawn("sh -c ~/.config/rofi/scripts/power"), desc='powermenu'),
-    Key([mod], "t", lazy.spawn("sh -c ~/.config/rofi/scripts/themes"), desc='theme_switcher'),
 
 # C U S T O M
 
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 0 +5%"), desc='Volume Up'),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -5%"), desc='volume down'),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer set 'Master' 5%+"), desc='Volume Up'),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer set 'Master' 5%-"), desc='volume down'),
     Key([], "XF86AudioMute", lazy.spawn("pulsemixer --toggle-mute"), desc='Volume Mute'),
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause"), desc='playerctl'),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous"), desc='playerctl'),
@@ -78,9 +77,12 @@ keys = [
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s 10%+"), desc='brightness UP'),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 10%-"), desc='brightness Down'),
     Key([mod],"e", lazy.spawn("pcmanfm"), desc='file manager'),
+<<<<<<< HEAD
     Key([mod], "s", lazy.spawn("flameshot gui"), desc='Screenshot'),
     Key([mod, "shift",], "y", lazy.spawn("light-locker-command -l"), desc="lock screen"),
 
+=======
+>>>>>>> 51a397098ff0e4a6c1cf54040ee6926ee31af73f
 ]
 
 
@@ -124,7 +126,7 @@ layouts = [
         border_width=2,
     ),
 
-    layout.Max(	border_focus='#1F1D2E',
+    layout.Max(	border_focus='#ffffff',
 	    border_normal='#1F1D2E',
 	    margin=10,
 	    border_width=0,
@@ -135,26 +137,11 @@ layouts = [
 	    margin=10,
 	    border_width=0,
 	),
-    # Try more layouts by unleashing below layouts
-   #  layout.Stack(num_stacks=2),
-   #  layout.Bsp(),
-    # layout.Matrix(	border_focus='#1F1D2E',
-	#    border_normal='#1F1D2E',
-	#    margin=10,
-	#    border_width=0,
-	#),
      layout.MonadTall(	border_focus='#1F1D2E',
 	    border_normal='#1F1D2E',
         margin=10,
 	    border_width=0,
 	),
-   #  layout.RatioTile(),
-    # layout.Tile(	border_focus='#1F1D2E',
-	#    border_normal='#1F1D2E',
-    #),
-   #  layout.TreeTab(),
-   #  layout.VerticalTile(),
-   #  layout.Zoomy(),
 ]
 
 
@@ -367,12 +354,6 @@ screens = [
                 ),
 
 
-                # widget.Image(
-                # filename='~/.config/qtile/Assets/Drop2.png',
-                # ),
-
-
-
                 widget.Image(
                     filename='~/.config/qtile/Assets/2.png',
                 ),
@@ -391,16 +372,6 @@ screens = [
                 ),
                 check_battery(),
 
-
-                #widget.Battery(
-                #    font='JetBrains Mono Bold',
-                #    background='#353446',
-                #    foreground='#CAA9E0',
-                #    format='{percent:2.0%}',
-                #    fontsize=13,
-                #),
-
-
                 widget.Image(
                     filename='~/.config/qtile/Assets/2.png',
                 ),
@@ -410,21 +381,6 @@ screens = [
                     length=8,
                     background='#353446',
                 ),
-
-
-                # widget.Battery(format=' {percent:2.0%}',
-                    # font="JetBrains Mono ExtraBold",
-                    # fontsize=12,
-                    # padding=10,
-                    # background='#353446',
-                # ),
-
-                # widget.Memory(format='﬙{MemUsed: .0f}{mm}',
-                    # font="JetBrains Mono Bold",
-                    # fontsize=12,
-                    # padding=10,
-                    # background='#4B4D66',
-                # ),
 
                 widget.Volume(
                     font='JetBrainsMono Nerd Font',
@@ -477,8 +433,6 @@ screens = [
                     background='#282738',
                 ),
 
-
-
             ],
             30,
             border_color = '#282738',
@@ -495,7 +449,7 @@ screens = [
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front()),
+    Click([mod], "Button1", lazy.window.bring_to_front()),
 ]
 
 dgroups_key_binder = None
