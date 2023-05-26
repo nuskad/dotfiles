@@ -77,12 +77,6 @@ keys = [
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s 10%+"), desc='brightness UP'),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 10%-"), desc='brightness Down'),
     Key([mod],"e", lazy.spawn("pcmanfm"), desc='file manager'),
-<<<<<<< HEAD
-    Key([mod], "s", lazy.spawn("flameshot gui"), desc='Screenshot'),
-    Key([mod, "shift",], "y", lazy.spawn("light-locker-command -l"), desc="lock screen"),
-
-=======
->>>>>>> 51a397098ff0e4a6c1cf54040ee6926ee31af73f
 ]
 
 
