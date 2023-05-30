@@ -116,26 +116,26 @@ for i in groups:
 
 
 layouts = [
-    layout.Columns( margin= [10,10,10,10], border_focus='#1F1D2E',
+    layout.Columns( margin= [10,10,10,10], border_focus='#CAA9E0',
 	    border_normal='#1F1D2E',
         border_width=2,
     ),
 
-    layout.Max(	border_focus='#ffffff',
+    layout.Max(	border_focus='#CAA9E0',
 	    border_normal='#1F1D2E',
 	    margin=10,
-	    border_width=0,
+	    border_width=2,
     ),
 
-    layout.Floating(	border_focus='#1F1D2E',
+    layout.Floating(	border_focus='#CAA9E0',
 	    border_normal='#1F1D2E',
 	    margin=10,
-	    border_width=0,
+	    border_width=2,
 	),
-     layout.MonadTall(	border_focus='#1F1D2E',
+     layout.MonadTall(	border_focus='#CAA9E0',
 	    border_normal='#1F1D2E',
         margin=10,
-	    border_width=0,
+	    border_width=2,
 	),
 ]
 
