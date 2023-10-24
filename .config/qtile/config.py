@@ -310,11 +310,12 @@ screens = [
                 ),
 
                 widget.Net(
-                format=' {up}   {down} ',
+                format=' {up:.0f}{up_suffix}    {down:.0f}{down_suffix} ',
                 background='#353446',
                 foreground='#CAA9E0',
                 font="JetBrains Mono Bold",
-                prefix='k',
+                prefix='M',
+                use_bits=True
                 ),
 
                 widget.Image(
