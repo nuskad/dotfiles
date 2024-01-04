@@ -44,8 +44,12 @@ keys = [
 
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawn("dmenu_run"),
-        desc="Spawn a command using a prompt widget"),
+    #Key([mod], "r", lazy.spawn("dmenu_run"), desc="Spawn a command using a prompt widget"),
+    
+    Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Spawn a command using a prompt widget"),
+    Key([mod], "p", lazy.spawn("sh -c ~/.config/rofi/scripts/power"), desc='powermenu'),
+    #Key([mod], "t", lazy.spawn("sh -c ~/.config/rofi/scripts/themes"), desc='theme_switcher'),
+
     # Lock Screen
     Key([mod, "shift",], "y", lazy.spawn("light-locker-command -l"), desc="lock screen"),
 
