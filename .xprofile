@@ -6,6 +6,6 @@ nitrogen --restore &
 nm-applet &
 dunst &
 udiskie -t &
-1password &
+1password --silent &
 xrandr --auto
 xrdb ~/.Xresources
