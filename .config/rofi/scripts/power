@@ -33,7 +33,7 @@ rofi_cmd() {
 #                       Run Rofi Menu
 # ───────────────────────────────────────────────────────────────
 run_rofi() {
-    echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+    echo -e "$shutdown\n$reboot\n$logout\n$lock\n$suspend" | rofi_cmd
 }
 
 # ───────────────────────────────────────────────────────────────
@@ -65,10 +65,8 @@ case ${chosen} in
         run_cmd --reboot
         ;;
     $lock)
-        if [[ -x '/usr/bin/betterlockscreen' ]]; then
-            betterlockscreen -l
-        elif [[ -x '/usr/bin/i3lock' ]]; then
-            i3lock
+        if [[ -x '/usr/bin/light-locker-command' ]]; then
+            light-locker-command -l
         fi
         ;;
     $suspend)
