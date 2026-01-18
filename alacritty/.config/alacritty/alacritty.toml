@@ -16,18 +16,16 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 [window]
 decorations = "full"
 dynamic_title = true
-#history = 10000
-#multiplier = 3
 opacity = 1
 startup_mode = "Windowed"
 
 [window.dimensions]
-columns = 82
-lines = 24
+columns = 164
+lines = 48
 
 [window.padding]
-x = 30
-y = 30
+x = 10
+y = 10
 
 [general]
 live_config_reload = true
